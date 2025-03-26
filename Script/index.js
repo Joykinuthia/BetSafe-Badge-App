@@ -12,4 +12,16 @@ document.addEventListener("DOMContentloaded", () =>{
     const alertBox = document.getElementById("alertBox");
 
     let users =[];
+
+    //Fetching and displaying all users
+    async function fetchUserData() {
+        try {
+            const response = await fetch(BASE_URL);
+            users = await response.json();
+            console.log("Fetched Users:", users);
+            render(users);
+        } catch(error) {
+            console.error("Error fetching users:", error)
+        }
+    }
 })
