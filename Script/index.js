@@ -101,7 +101,25 @@ document.addEventListener("DOMContentloaded", () =>{
             }
             
         }
-        
+        //Deleting user(DELETE request)
+        async function deleteUser(userId) {
+            try {
+                const response = await fetch(`${BASE_URL}/${userId}`, {
+                    method:"DELETE"
+                });
+
+                if (response.ok) {
+                    users = users.filter(user => user.id !== userId);
+                    render(users);
+                }else {
+                    console.error("Failed to delete user");
+                }
+            }catch(error) {
+                console.error("Error deleting user:", error);
+            }
+            
+        }
+
         
     }
 })
