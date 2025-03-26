@@ -24,4 +24,23 @@ document.addEventListener("DOMContentloaded", () =>{
             console.error("Error fetching users:", error)
         }
     }
+    //Render function to update UI
+    function render(users) {
+        summaryDiv.innerHTML = "";
+
+        users.forEach(user => {
+            const userElement = document.createElement("p");
+            const totalExpenditure = user.expenses.reduce((sum,expense) => sum + expense.amount, 0);
+            userElement.innerHTML = 
+            <strong>${user.name}</strong> - Income:$${user.income}, Expenses: $${totalExpenditure}
+            <button onclick="deleteUser(${user.id})">Delete</button>
+            ;
+            summaryDiv.appendChild(userElement);
+        });
+        totalIncomeDisplay.textContent = users.reduce((sum, user) =>
+        sum + parseFloat(user.income),0);
+        totalExpenditureDisplay.textContent = users
+        .map(user => user.expenses.reduce((sum, expense) => sum + expense.amount, 0))
+        .reduce((sum, expense) => sum + expense, 0);
+    }
 })
