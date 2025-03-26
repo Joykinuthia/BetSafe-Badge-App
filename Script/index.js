@@ -9,5 +9,7 @@ document.addEventListener("DOMContentloaded", () =>{
     const totalIncomeDisplay = document.getElementById("totalIncome");
     const totalExpenditureDisplay = document.getElementById("totalExpenditure");
     const summaryDiv = document.getElementById("summary");
-    const alertBox = document.getElementById("alertBox")
+    const alertBox = document.getElementById("alertBox");
+
+    let users =[];
 })
