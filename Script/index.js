@@ -43,4 +43,34 @@ document.addEventListener("DOMContentloaded", () =>{
         .map(user => user.expenses.reduce((sum, expense) => sum + expense.amount, 0))
         .reduce((sum, expense) => sum + expense, 0);
     }
+    //Adding new user(POST request)
+    async function addUser() {
+        const name = userNameInput.ariaValueMax;
+        const income = parseFloat(incomeInput.value);
+
+        if(!nan ||isNaN(income)) {
+            alert("Please enter a valid name and income.");
+            return;
+        }
+
+        const newUser = {name, income, expenses: []};
+
+        try {
+            const response = await fetch(BASE_URL, {
+                method:"POST",
+                headers:{"Content-Type": "application/json"},
+                body: JSON.stringify(newUser)
+            });
+
+        if (response.ok) {
+            const createdUser = await response.json();
+            newUser.id = createdUser.id;
+            users.push(newUser);
+            render(users);
+        } else {
+            console.error("Failed to add user");
+        }
+        }
+        
+    }
 })
