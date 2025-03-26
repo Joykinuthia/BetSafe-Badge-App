@@ -71,6 +71,37 @@ document.addEventListener("DOMContentloaded", () =>{
             console.error("Failed to add user");
         }
         }
+        //Adding expense to a user(PUT request)
+        async function addExpense(userId) {
+            const expenditureName = expenditureNameInput.value;
+            const expenditureAmount = parseFloat(expenditureAmountInput.value);
+
+            if(!expenditureName || isNaN(expenditureAmount)) {
+                alert ("Please enter valid expense details.");
+                return;
+            }
+            const user = users.find(u => u.id === userId);
+            if(!user) return;
+            user.expenses.push({name: expenditureName, amount: expenditureAmount });
+
+            try {
+                const response = await fetch(`${BASE_URL}/${userId}`, {
+                    method: "PUT",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(user)
+                });
+
+                if(response.ok) {
+                    render(users);
+                }else {
+                    console.error("Failed to update expenses");
+                }
+            }catch(error) {
+                console.error("Error updating expenses:", error);
+            }
+            
+        }
+        
         
     }
 })
