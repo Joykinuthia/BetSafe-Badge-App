@@ -98,8 +98,7 @@ document.addEventListener("DOMContentloaded", () =>{
                 }
             }catch(error) {
                 console.error("Error updating expenses:", error);
-            }
-            
+            }  
         }
         //Deleting user(DELETE request)
         async function deleteUser(userId) {
@@ -116,9 +115,24 @@ document.addEventListener("DOMContentloaded", () =>{
                 }
             }catch(error) {
                 console.error("Error deleting user:", error);
-            }
-            
+            }  
         }
+
+        //Adding Event listeners for form submissions
+        document.getElementById("income-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            addUser();
+        });
+
+        document.getElementById("expenditure-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const userId = parseInt(prompt("Enter user ID for this expense:"));
+            if(!isNaN(userId)) {
+                addExpense(userId);
+            }else {
+                alert("Invalid user ID.")
+            }
+        });
 
         
     }
