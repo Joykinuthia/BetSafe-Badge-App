@@ -133,7 +133,9 @@ document.addEventListener("DOMContentloaded", () =>{
                 alert("Invalid user ID.")
             }
         });
-
         
+
+        //Loading data on startup
+        fetchUserData(); 
     }
 })
