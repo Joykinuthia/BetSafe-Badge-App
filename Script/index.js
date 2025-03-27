@@ -30,3 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error fetching user data:", error);
     }
   }
+
+  // Create a new user entry on the server
+  async function createUser() {
+    try {
+      const response = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(currentUser)
+      });
+      if (response.ok) {
+        const newUser = await response.json();
+        currentUser.id = newUser.id;
+      }
+    } catch (error) {
+      console.error("Error creating user:", error);
+    }
+  }
