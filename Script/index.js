@@ -13,3 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const badgeSection = document.getElementById("badge-section");
 
   let currentUser = null;
+
+  // Fetch user data; 
+  async function fetchUserData() {
+    try {
+      const response = await fetch(BASE_URL);
+      if (response.ok) {
+        currentUser = await response.json();
+      } else {
+        // If not found, initialize default user data and create a new user record.
+        currentUser = { income: 0, expenses: [] };
+        await createUser();
+      }
+      render();
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  }
