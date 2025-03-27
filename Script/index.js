@@ -11,3 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const summaryDiv = document.getElementById("summary");
   const alertBox = document.getElementById("alertBox");
   const badgeSection = document.getElementById("badge-section");
+
+  let currentUser = null;
