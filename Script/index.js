@@ -47,3 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error creating user:", error);
     }
   }
+
+  // Update the UI summary with current income and total expenditure.
+  function render() {
+    totalIncomeDisplay.textContent = currentUser.income;
+    const totalExpenditure = currentUser.expenses.reduce((sum, expense) => sum + expense.amount, 0);
+    totalExpenditureDisplay.textContent = totalExpenditure;
