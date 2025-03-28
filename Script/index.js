@@ -160,3 +160,12 @@ document.addEventListener('DOMContentLoaded', function () {
               if (newAmount === null) return;
               const newDate = prompt("Edit Date (YYYY-MM-DD):", budget.date);
               if (newDate === null) return;
+
+                // Check for gambling expense condition if needed
+            if (newCategory.toLowerCase() === 'gambling') {
+                const maxAllowed = currentIncome * 0.015;
+                if (Number(newAmount) > maxAllowed) {
+                  alert(Gambling expense exceeds 1.5% of your income (${maxAllowed.toFixed(2)}). Edit canceled.);
+                  return;
+                }
+              }
