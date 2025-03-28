@@ -169,3 +169,15 @@ document.addEventListener('DOMContentLoaded', function () {
                   return;
                 }
               }
+
+              const updatedBudget = {
+                ...budget,
+                category: newCategory,
+                amount: Number(newAmount),
+                date: newDate
+              };
+    
+              fetch(http://localhost:3000/budgets/${budgetId}, {
+                method: 'PUT',
+                headers: {
+                  'Content-Type': 'application/json'
