@@ -87,3 +87,29 @@ document.addEventListener('DOMContentLoaded', function () {
           customBudgetDiv.style.display = 'none';
         }
       });
+
+       // Handle budget form submission
+    budgetForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errorMessageDiv.textContent = '';
+    
+        let category = budgetTypeSelect.value;
+        if (category === 'other') {
+          category = customBudgetInput.value.trim();
+          if (category === '') {
+            errorMessageDiv.textContent = 'Please enter a custom category.';
+            return;
+          }
+        }
+    
+        const amount = Number(amountInput.value);
+        const date = dateInput.value;
+    
+        if (isNaN(amount) || amount <= 0) {
+          errorMessageDiv.textContent = 'Please enter a valid amount.';
+          return;
+        }
+        if (!date) {
+          errorMessageDiv.textContent = 'Please select a date.';
+          return;
+        }
