@@ -181,3 +181,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedBudget)
+              })
+                .then(response => response.json())
+                .then(data => {
+                  console.log("Budget updated:", data);
+                  loadBudgets();
+                })
+                .catch(err => console.error('Error updating budget:', err));
+            })
+            .catch(err => console.error('Error fetching budget for edit:', err));
+        }
+      });
+    });
