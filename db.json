@@ -1,16 +1,46 @@
 {
   "income": [
     {
-      "id": "1",
-      "amount": 15000
+      "id": 1,
+      "amount": 0
     }
   ],
   "budgets": [
     {
-      "id": "dedc",
+      "id": "4d52",
       "category": "utilities",
+      "amount": 20000,
+      "date": "2025-03-11"
+    },
+    {
+      "id": "b0ff",
+      "category": "food",
       "amount": 10000,
-      "date": "2025-03-14"
+      "date": "2025-03-05"
+    },
+    {
+      "id": "b7f0",
+      "category": "utilities",
+      "amount": 30000,
+      "date": "2025-03-10"
+    },
+    {
+      "id": "8969",
+      "category": "entertainment",
+      "amount": 10000,
+      "date": "2025-03-26"
+    },
+    {
+      "id": "862d",
+      "category": "rent",
+      "amount": 18000,
+      "date": "2025-04-02"
+    },
+    {
+      "id": "83fd",
+      "category": "gambling",
+      "amount": 1000,
+      "date": "2025-03-06"
     }
   ]
 }
