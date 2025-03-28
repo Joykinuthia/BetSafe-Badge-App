@@ -1,84 +1,16 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "Johnson Kamau",
-        "income": "200000",
-        "expenses": [
-          {"name": "Rent", "amount": 30000},
-          {"name": "Food", "amount": 20000},
-          {"name": "Fuel", "amount": 15000},
-          {"name": "School Fees", "amount": 10000},
-          {"name": "Shopping", "amount": 25000},
-          {"name": "Entertainment", "amount": 15000},
-          {"name": "Savings", "amount": 25000},
-          {"name": "Investments", "amount": 45000},
-          {"name": "Betting", "amount": 20000}
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Timothy Muigai",
-        "income": "250000",
-        "expenses": [
-          {"name": "Rent", "amount": 40000},
-          {"name": "Food", "amount": 15000},
-          {"name": "Fuel", "amount": 30000},
-          {"name": "School Fees", "amount": 20000},
-          {"name": "Shopping", "amount": 35000},
-          {"name": "Entertainment", "amount": 30000},
-          {"name": "Savings", "amount": 50000},
-          {"name": "Investments", "amount": 25000},
-          {"name": "Betting", "amount": 5000}
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Mary Nekesa",
-        "income": "75000",
-        "expenses": [
-          {"name": "Rent", "amount": 15000},
-          {"name": "Food", "amount": 5000},
-          {"name": "Fuel", "amount": 10000},
-          {"name": "School Fees", "amount": 5000},
-          {"name": "Shopping", "amount": 7000},
-          {"name": "Entertainment", "amount": 3000},
-          {"name": "Savings", "amount": 10000},
-          {"name": "Investments", "amount": 13000},
-          {"name": "Betting", "amount": 8000}
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Henry Oduor",
-        "income": "50000",
-        "expenses": [
-          {"name": "Rent", "amount": 10000},
-          {"name": "Food", "amount": 4000},
-          {"name": "Fuel", "amount": 10000},
-          {"name": "School Fees", "amount": 0},
-          {"name": "Shopping", "amount": 2000},
-          {"name": "Entertainment", "amount": 9000},
-          {"name": "Savings", "amount": 5000},
-          {"name": "Investments", "amount": 0},
-          {"name": "Betting", "amount": 10000}
-        ]
-      },
-      {
-        "id": 5,
-        "name": "Barbara Chemutai",
-        "income": "350000",
-        "expenses": [
-          {"name": "Rent", "amount": 50000},
-          {"name": "Food", "amount": 25000},
-          {"name": "Fuel", "amount": 30000},
-          {"name": "School Fees", "amount": 35000},
-          {"name": "Shopping", "amount": 40000},
-          {"name": "Entertainment", "amount": 30000},
-          {"name": "Savings", "amount": 60000},
-          {"name": "Investments", "amount": 75000},
-          {"name": "Betting", "amount": 2000}
-        ]
-      }
-    ]
-  }
+  "income": [
+    {
+      "id": "1",
+      "amount": 15000
+    }
+  ],
+  "budgets": [
+    {
+      "id": "dedc",
+      "category": "utilities",
+      "amount": 10000,
+      "date": "2025-03-14"
+    }
+  ]
+}

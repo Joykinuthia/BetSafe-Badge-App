@@ -1,123 +1,124 @@
 
-* {
+ * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef2f3;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6;
     color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background-color: white;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  /* Header Section */
+  header {
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #57a1d1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  /* Section Styling */
+  section {
+    background: #fff;
+    margin-top: 20px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-}
-
-h1 {
-    color: #007BFF;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-h3 {
-    color: #555;
-    font-size: 1.2em;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-h2 {
-    color: #28a745;
-    font-size: 1.5em;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-/* Input Fields */
-input[type="text"], input[type="number"] {
-    width: 80%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  section h2 {
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: #444;
+  }
+  
+  /* Form Elements */
+  input, select, button {
+    display: block;
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 1em;
-}
-
-/* Button Styling */
-button {
-    background-color: #007BFF;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #57a1d1;
+    box-shadow: 0 0 4px rgba(87, 161, 209, 0.4);
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #57a1d1;
     color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Alert Box */
-#alertBox {
-    color: red;
-    margin-top: 20px;
-    font-size: 1.1em;
-}
-
-/* Summary Section */
-#summary p {
-    font-size: 1.1em;
-    margin: 10px 0;
-}
-
-/* Badge Section */
-#badge-section {
-    margin-top: 30px;
-    padding: 15px;
-    background-color: #e8f9e2;
-    border: 2px solid #28a745;
-    border-radius: 5px;
-    display: none;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-#badge-section h2 {
-    color: #28a745;
-}
-
-label {
-    display: block;
-    margin: 5px 0;
-    font-size: 1em;
-}
-
-/* Responsive Design for smaller screens eg mobile phones */
-@media (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #4682a9;
+  }
+  
+  /* Error Message Styling */
+  #error-message {
+    color: #d9534f;
+    margin-top: 10px;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  table th, table td {
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #f7f7f7;
+  }
+  
+  /* Edit Button in Table */
+  .edit-btn {
+    background-color: #f0ad4e;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-btn:hover {
+    background-color: #ec971f;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    input, select, button {
+      width: 100%;
     }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.3em;
-    }
-}
+  }

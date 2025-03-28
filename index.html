@@ -1,51 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BetSafe Badge App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Budget Planning App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>BetSafe Badge App</h1>
-        
-        <!-- Income Input -->
-        <h3>Income Breakdown</h3>
-        <div id="income-form">
-            <label for="user-name">User Name:</label>
-            <label for="income">Enter Your Total Monthly Income:</label>
-            <input type="number" id="income" placeholder="Enter your income">
-            <button onclick="setIncome()">Submit Income</button>
-        </div>
-
-        <!-- Expenditure Input -->
-        <h3>Expenses Breakdown</h3>
-        <div id="expenditure-form">
-            <label for="expenditure-name">Expenditure Name:</label>
-            <input type="text" id="expenditure-name" placeholder="Enter your expenditure name">
-            <label for="expenditure-amount">Expenditure Amount:</label>
-            <input type="number" id="expenditure-amount" placeholder="Enter your expenditure amount">
-            <button onclick="validateExpenditureAmount()">Submit Expenditure Amount</button>
-        </div>
-
-        <!--Summary Section-->
-        <h3>Summary</h3>
-        <div id="summary">
-            <p><strong>Total Income:</strong><span id="totalIncome"></span></p>
-            <p><strong>Total Expenditure:</strong><span id="totalExpenditure"></span></p>
-        </div>
-            
-        <!-- Alert Box -->
-        <div id="alertBox"></div>
-    
-        <!-- Badge System -->
-        <div id="badge-section">
-            <h2>Congratulations! You Earned a Responsible Budgeting Badge!</h2>
-        </div>
-    </div>
-
-    <script src="Script/index.js"></script>
+  <h1>Budget Planning App</h1>
+  
+  <!-- Income Section -->
+  <section id="income-section">
+    <h2>Enter Your Income</h2>
+    <input type="number" id="income-input" placeholder="Enter your income">
+    <button id="set-income-btn">Set Income</button>
+  </section>
+  
+  <!-- Budget Entry Section -->
+  <section id="budget-entry-section">
+    <h2>Add a Budget Item</h2>
+    <form id="budget-form">
+      <label for="budget-type">Budget Category:</label>
+      <select id="budget-type" name="budget-type">
+        <option value="">--Select Category--</option>
+        <option value="food">Food</option>
+        <option value="utilities">Utilities</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="gambling">Gambling</option>
+        <option value="other">Other</option>
+      </select>
+      <div id="custom-budget-name" style="display: none;">
+        <input type="text" id="custom-budget-input" placeholder="Enter custom category">
+      </div>
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" placeholder="Enter amount">
+      <label for="budget-date">Budget Date:</label>
+      <input type="date" id="budget-date">
+      <button type="submit">Add Budget</button>
+    </form>
+    <div id="error-message"></div>
+  </section>
+  
+  <!-- Budget Summary Section -->
+  <section id="budget-summary">
+    <h2>Budget Summary</h2>
+    <p>Total Income: <span id="total-income">0</span></p>
+    <p>Total Expenses: <span id="total-expenses">0</span></p>
+    <p id="comparison-message"></p>
+  </section>
+  
+  <!-- Budget History Section -->
+  <section id="budget-history">
+    <h2>Budget History</h2>
+    <table id="budget-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Amount</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Budgets will be loaded here -->
+      </tbody>
+    </table>
+  </section>
+  
+  <script src="index.js"></script>
 </body>
 </html>
-
