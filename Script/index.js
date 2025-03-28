@@ -113,3 +113,18 @@ document.addEventListener('DOMContentLoaded', function () {
           errorMessageDiv.textContent = 'Please select a date.';
           return;
         }
+
+         // Special check for gambling category
+      if (category.toLowerCase() === 'gambling') {
+        const maxAllowed = currentIncome * 0.015;
+        if (amount > maxAllowed) {
+          errorMessageDiv.textContent = Gambling expense exceeds 1.5% of your income (${maxAllowed.toFixed(2)}).;
+          return;
+        }
+      }
+  
+      const newBudget = {
+        category: category,
+        amount: amount,
+        date: date
+      };
