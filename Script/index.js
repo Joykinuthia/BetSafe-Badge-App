@@ -146,3 +146,17 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(err => console.error('Error adding budget:', err));
     });
+
+      // Edit budget item functionality
+      budgetTableBody.addEventListener('click', function (e) {
+        if (e.target && e.target.classList.contains('edit-btn')) {
+          const budgetId = e.target.getAttribute('data-id');
+          fetch(http://localhost:3000/budgets/${budgetId})
+            .then(response => response.json())
+            .then(budget => {
+              const newCategory = prompt("Edit Category:", budget.category);
+              if (newCategory === null) return; // cancel edit
+              const newAmount = prompt("Edit Amount:", budget.amount);
+              if (newAmount === null) return;
+              const newDate = prompt("Edit Date (YYYY-MM-DD):", budget.date);
+              if (newDate === null) return;
