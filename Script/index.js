@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const comparisonMessageEl = document.getElementById('comparison-message');
     const budgetTableBody = document.querySelector('#budget-table tbody');
 
-  let currentUser = null;
+    let currentIncome = 0;
 
   // Load income from db.json via JSON server
   fetch('http://localhost:3000/income/1')
