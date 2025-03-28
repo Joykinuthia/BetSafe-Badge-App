@@ -128,3 +128,21 @@ document.addEventListener('DOMContentLoaded', function () {
         amount: amount,
         date: date
       };
+
+      // Save new budget item in db.json
+      fetch('http://localhost:3000/budgets', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newBudget)
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log("Budget added:", data);
+          loadBudgets();
+          budgetForm.reset();
+          customBudgetDiv.style.display = 'none';
+        })
+        .catch(err => console.error('Error adding budget:', err));
+    });
