@@ -78,3 +78,12 @@ document.addEventListener('DOMContentLoaded', function () {
           })
           .catch(err => console.error('Error updating income:', err));
       });
+
+      // Toggle custom category input when "other" is selected
+    budgetTypeSelect.addEventListener('change', function () {
+        if (this.value === 'other') {
+          customBudgetDiv.style.display = 'block';
+        } else {
+          customBudgetDiv.style.display = 'none';
+        }
+      });
