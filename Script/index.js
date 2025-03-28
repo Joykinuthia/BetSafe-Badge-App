@@ -23,3 +23,35 @@ document.addEventListener('DOMContentLoaded', function () {
     totalIncomeEl.textContent = currentIncome;
   })
   .catch(err => console.error('Error fetching income:', err));
+
+    // Function to load all budgets and update summary
+    function loadBudgets() {
+        fetch('http://localhost:3000/budgets')
+          .then(response => response.json())
+          .then(data => {
+            budgetTableBody.innerHTML = '';
+            let totalExpenses = 0;
+            data.forEach(budget => {
+              totalExpenses += Number(budget.amount);
+              const tr = document.createElement('tr');
+              tr.innerHTML = `
+                <td>${budget.date}</td>
+                <td>${budget.category}</td>
+                <td>${budget.amount}</td>
+                <td>
+                  <button class="edit-btn" data-id="${budget.id}">Edit</button>
+                </td>
+              `;
+              budgetTableBody.appendChild(tr);
+            });
+            totalExpensesEl.textContent = totalExpenses;
+            if (totalExpenses > currentIncome) {
+              comparisonMessageEl.textContent = "Your total budgets exceed your income!";
+            } else {
+              comparisonMessageEl.textContent = "Your total budgets are within your income.";
+            }
+          })
+          .catch(err => console.error('Error fetching budgets:', err));
+      }
+    
+      loadBudgets();
