@@ -55,3 +55,26 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     
       loadBudgets();
+
+      // Update income and store in db.json
+    setIncomeBtn.addEventListener('click', function () {
+        const incomeValue = Number(incomeInput.value);
+        if (isNaN(incomeValue) || incomeValue <= 0) {
+          alert("Please enter a valid income.");
+          return;
+        }
+        currentIncome = incomeValue;
+        totalIncomeEl.textContent = currentIncome;
+        fetch('http://localhost:3000/income/1', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ id: 1, amount: currentIncome })
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log("Income updated:", data);
+          })
+          .catch(err => console.error('Error updating income:', err));
+      });
