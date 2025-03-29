@@ -47,6 +47,12 @@
       "category": "food",
       "amount": 1000,
       "date": "2025-03-18"
+    },
+    {
+      "id": "5fc3",
+      "category": "utilities",
+      "amount": 500,
+      "date": "2025-03-22"
     }
   ]
 }
