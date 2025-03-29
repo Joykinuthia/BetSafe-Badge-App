@@ -1,8 +1,8 @@
 {
   "income": [
     {
-      "id": 1,
-      "amount": 0
+      "id": "1",
+      "amount": 5000
     }
   ],
   "budgets": [
@@ -41,6 +41,12 @@
       "category": "gambling",
       "amount": 1000,
       "date": "2025-03-06"
+    },
+    {
+      "id": "5817",
+      "category": "food",
+      "amount": 1000,
+      "date": "2025-03-18"
     }
   ]
 }
